@@ -61,6 +61,14 @@ impl Display {
             .collect::<Vec<_>>())
     }
 
+    pub fn x(&self) -> usize {
+        self.0.x() as usize
+    }
+    
+    pub fn y(&self) -> usize {
+        self.0.y() as usize
+    }
+
     pub fn width(&self) -> usize {
         self.0.width() as usize
     }

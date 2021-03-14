@@ -61,6 +61,14 @@ impl Display {
         Ok(x11::Server::displays(server).map(Display).collect())
     }
 
+    pub fn x(&self) -> usize {
+        self.0.rect().x as usize
+    }
+
+    pub fn y(&self) -> usize {
+        self.0.rect().y as usize
+    }
+
     pub fn width(&self) -> usize {
         self.0.rect().w as usize
     }

@@ -26,6 +26,24 @@ pub struct CFDictionaryValueCallBacks {
     version: i32
 }
 
+#[repr(C)]
+pub struct CGSize {
+    pub width: CGFloat,
+    pub height: CGFloat,
+}
+
+#[repr(C)]
+pub struct CGPoint {
+    pub x: CGFloat,
+    pub y: CGFloat,
+}
+
+#[repr(C)]
+pub struct CGRect {
+    pub origin: CGPoint,
+    pub size: CGSize
+}
+
 macro_rules! pixel_format {
     ($a:expr, $b:expr, $c:expr, $d:expr) => {
           ($a as i32) << 24
@@ -157,6 +175,7 @@ extern {
     ) -> CGError;
 
     pub fn CGMainDisplayID() -> u32;
+    pub fn CGDisplayBounds(display: u32) -> CGRect;
     pub fn CGDisplayPixelsWide(display: u32) -> usize;
     pub fn CGDisplayPixelsHigh(display: u32) -> usize;
 

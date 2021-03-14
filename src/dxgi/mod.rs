@@ -385,6 +385,14 @@ pub struct Display {
 }
 
 impl Display {
+    pub fn x(&self) -> LONG {
+        self.desc.DesktopCoordinates.left
+    }
+
+    pub fn y(&self) -> LONG {
+        self.desc.DesktopCoordinates.top
+    }
+
     pub fn width(&self) -> LONG {
         self.desc.DesktopCoordinates.right -
         self.desc.DesktopCoordinates.left

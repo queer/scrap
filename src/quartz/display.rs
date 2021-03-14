@@ -32,6 +32,14 @@ impl Display {
         self.0
     }
 
+    pub fn x(self) -> usize {
+        unsafe { CGDisplayBounds(self.0).origin.x }
+    }
+
+    pub fn y(self) -> usize {
+        unsafe { CGDisplayBounds(self.0).origin.y }
+    }
+
     pub fn width(self) -> usize {
         unsafe { CGDisplayPixelsWide(self.0) }
     }
